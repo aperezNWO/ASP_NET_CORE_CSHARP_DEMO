@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div>
+    <h1> C++ - Invocar función</h1>
+    <label>First Argument</label><input type="text" id="primerNumero" name="primerNumero">
+    <br />
+    <label>Second Argument</label><input type="text" id="segundoNumero" name="segundoNumero" />
+    <br />
+    <input id="CalculateBtn" type="button" value="Calculate" />
+    <br />
+    <label>Result</label><input type="text" id="resultado" readonly="readonly" />
+</div>
+<script type="text/javascript">
+    $("#CalculateBtn").click(function () {
+        Calculate();
+    });
+    //
+    function pathToAction()
+    {
+            var pathToAction = '@Url.Content("~")';
+
+            if (pathToAction == "/")
+                pathToAction = "";
+            else
+                pathToAction = pathToAction.substring(0, pathToAction.length);
+
+            return pathToAction;
+    }
+    //
+    function Calculate()
+    {
+        var strUrl        = pathToAction() + "/UnitTesting/Sum";
+        var primerNumero  = $("#primerNumero").val();
+        var segundoNumero = $("#segundoNumero").val();
+        $.ajax(
+            {
+                url: strUrl,
+                method:"POST",
+                data:
+                {
+                     primerNumero: primerNumero
+                    ,segundoNumero: segundoNumero
+                },
+                success: function (data)
+                {
+                    console.log("response #1: " + data);
+
+                    $("#resultado").val(data);
+                }
+            })
+            .fail(function (jqXHR, textStatus, errorThrown)
+            {
+                console.log("error : " + jqXHR.statusText);
+            })
+            .done(function (data)
+            {
+                console.log("response #2: " + data);
+            });
+
+    }
+</script>
