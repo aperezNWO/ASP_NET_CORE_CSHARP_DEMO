@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.js"></script>
+        <style>        
+        .imgFromXHR {
+            border : 1px solid black;
+            width  : 300px;
+            height : 100px;
+        }
+        .xmlValuesBox
+        {
+            border : solid 1px black;
+            background-color: coral; 
+            padding: 10px 10px 10px 10px;
+            width:80%;
+            height:auto;
+        }
+        .Box
+        {
+            border : solid 1px black;
+            background-color:chocolate; 
+            padding: 10px 10px 10px 10px;
+            width:80%;
+            height:auto;
+        }
+        </style>
+    </head>
+    <body>
+        <hr>
+        <h1>Objective 3.4 Serialize, deserialize and transmit data</h1>
+        <hr>
+        <div id="sec_top">
+            <ul>
+                <li><a href="#sec_1">Send date by using XHTMLHttpRequest</a></li>
+                <li><a href="#sec_2">Serialize and deserialize JSON data</a></li>
+                <li><a href="#sec_3">Serialize and deserialize binary data</a></li>
+            </ul>
+            <a href="Chapter_3_Jquery_Secure_Index.html">[Index]</a>
+            <br/>
+        </div>
+        <hr>
+        <h2 id="sec_1">Send data by using XHTMLHttpRequest</h2>
+        <div class="xmlValuesBox">
+            <span id="xmlValues">
+                &nbsp;
+            </span>
+        </div>
+        <br>
+        <br>
+        <input type="button" value="[GET XML]" id="XMLSerializeBtn" />
+        <br>
+        <br>
+        File : <a href="XmlData.xml" target="_blank">XmlData.xml</a>
+        <br>
+        <br>
+        <a href="#sec_top">[Top]</a>
+        <hr>
+        <h2 id="sec_2">Serlialize and deserialize JSON data</h2>
+        <div class="Box">
+            <span id="JSONSerializeResult">
+            </span>
+         </div>
+        <br>
+        <br>
+        File : <a href="JsonData.json" target="_blank">JsonData.json</a>
+        <br>
+        <br>
+        <input type="button" value="[SERIALIZE/DESERIALIZE]" id="JSONSerialize" />
+        <br>
+        <br>
+        <a href="#sec_top">[Top]</a>
+        <hr>
+        <h2 id="sec_3">Serialize and deserialize binary data</h2>
+        <h3>ResponseType BLOB/Image</h3>
+        <input type="button" value="[GET IMAGE]" id="GetImage" />
+        <br>
+        <br>
+        <img id="GetImageResult" src="#" class="imgFromXHR"/>
+        <hr>
+        <h3>Using the Form submit method / Using the Jquery Serlialize method</h3>
+        <div>
+            <form id="singupForm">
+                First Name : 
+                <input type="text"  id="firstName" name="firstName"/>
+                <br/>
+                Last  Name : 
+                <input type="text"  id="lastName"  name="lastName"/>
+                <br/>
+                Gender     :
+                <span>
+                    <input type="radio" name="gender" value="m"/>Male
+                    <input type="radio" name="gender" value="f"/>Femalie
+                </span>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <a href="#sec_top">[Top]</a>
+        <hr>
+    </body>
+    <script>
+        //
+        let qString    = "";
+        //
+        let jsonParsed = false;
+        //
+        $(document).ready()
+        {
+            //
+            console.log("Objective 3.4. Serliaize, Deserliize and transmit data");
+            //
+            $("#singupForm").submit(function (event)
+            {
+                //
+                // event.preventDefault();
+                //
+                console.log("Objective 3.4. FORM SUBMIT - BUTTON");
+                //
+                qString = $("#singupForm").serialize();
+                //
+                console.log("Objective 3.4. FORM SUBMIT - FUNCTION - SERIALIZE : " + qString);
+                //
+                alert("SERIALIZED DATA : " + qString);
+                //
+                return false;// AVOID REDIRECTION
+            });
+        }
+        //
+        $("#GetImage").click(function(e) {      
+                //
+                console.log("Objective 3.4. ResponseTyupe BLOB/Image.");
+                //
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'Borland_logo.jpg');
+                xhr.responseType = 'blob';
+                //
+                xhr.onload = () => {
+                    const blob = xhr.response;
+                    const img  = document.getElementById("GetImageResult");
+                    img.src    = URL.createObjectURL(blob);
+                };
+                //    
+                xhr.send();  
+                //
+                return false; // AVOID UNEXPEDTED BEHAVIOUR
+        });
+        //
+        $("#JSONSerialize").click(function(e) {  
+            //
+            console.log("Objective 3.4. Serlialize and deserialize JSON data.");
+            //
+            var jsonPersonString = "";
+            //
+            if (jsonParsed == false)
+            {
+                //
+                jsonParsed = true;
+                //
+                var person = [{
+                         id         : "1"
+                        ,firstName  : "rick"
+                        ,lastName   : "delorme"
+                        ,eyeColor   : "green"
+                        ,HairColor  : "brown"
+                }];
+                //
+                var jsonPersonString = JSON.stringify(person);
+                //
+                $("#JSONSerializeResult").html("SERIALIZE : " + jsonPersonString);
+                //
+                console.log("Objective 3.4. Serlialize and deserialize JSON data. RESULT SERIALIZE : " + jsonPersonString);
+            }
+            else 
+            {
+                //
+                jsonParsed = false;
+                //
+                const xhr        = new XMLHttpRequest();
+                xhr.open('GET', 'JsonData.json');
+                xhr.responseType = 'text';
+                //
+                xhr.onload = () => {
+                    //
+                    const jsonResponseText   = xhr.responseText;
+                    const jsonResponseParsed = JSON.parse(jsonResponseText);
+                    const jsonData           =  " [{ "
+                                              + "   ,'id'         :'" + jsonResponseParsed[0]["id"] 
+                                              + "   ,'firstName'  :'" + jsonResponseParsed[0]["firstName"] 
+                                              + "   ,'lastName'   :'" + jsonResponseParsed[0]["lastName"] 
+                                              + "   ,'eyeColor'   :'" + jsonResponseParsed[0]["eyeColor"] 
+                                              + "   ,'hairColor'  :'" + jsonResponseParsed[0]["hairColor"] 
+                                              + "'}]";
+                    //
+                    $("#JSONSerializeResult").html("DESERIALIZE : " + jsonData);
+                    //
+                    console.log("Objective 3.4. Serlialize and deserialize JSON data. RESULT DESERIALIZE : " + jsonData);                
+                };
+                //    
+                xhr.send();  
+            }
+
+            //
+            return false; // AVOID UNEXPEDTED BEHAVIOUR
+        });
+        //
+        $("#XMLSerializeBtn").click(function (e) {
+            //
+            console.log("Objective 3.4. Send data by using XHTMLHttpRequest ");
+            //
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //
+                var xmlDoc    = $.parseXML(xhttp.responseText);
+                var xmlValues = "";
+                //
+                $(xmlDoc).find("Person").each(function(index) {
+                     //
+                     let xmlPersonData = {
+                             //
+                             idValue    : $(this)[0].getAttribute('id')
+                            ,firstName  : $(this)[0].getElementsByTagName('firstName')[0].textContent
+                            ,lastName   : $(this)[0].getElementsByTagName('lastName')[0].textContent
+                            ,hairColor  : $(this)[0].getElementsByTagName('hairColor')[0].textContent
+                            ,eyeColor   : $(this)[0].getElementsByTagName('eyeColor')[0].textContent
+                        };
+                        //
+                        let xmlValue    =  ("{ IdValue   : " + xmlPersonData.idValue 
+                                        +   ", firstName : " + xmlPersonData.firstName 
+                                        +   ', lastName  : ' + xmlPersonData.lastName 
+                                        +   ', eyeColor  : ' + xmlPersonData.eyeColor
+                                        +   ', hairColor : ' + xmlPersonData.hairColor + "}");
+                        // 
+                        console.log("Objective 3.3. xml value  : " + xmlValue); 
+                        //
+                        xmlValues      += (xmlValue + "</br>");
+                });
+                //
+                $("#xmlValues").html(xmlValues);
+            }
+            };
+            xhttp.open("GET", "XmlData.xml");
+            xhttp.send();                
+        });
+    </script>
+</html>

@@ -1,0 +1,400 @@
+﻿@model IEnumerable<mcsd.Library.DataAccess.Entity.AccessLogEntity>
+@{
+    ViewBag.Title = @"[GENERAR ARCHIVO XLS]";
+}
+
+<!-- INICIO CDN -->
+<link type="text/css"
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+<link type="text/css"
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" />
+<link type="text/css"
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+<link type="text/css"
+      rel="stylesheet"
+      href="https://cdn.datatables.net/v/ju/dt-1.12.1/r-2.3.0/datatables.min.css" />
+<!-- FIN  CDN -->
+
+<style>
+    /*------------------------------------------------*/
+    /* ESTILOS STATUS DE OPERACION                    */
+    /*------------------------------------------------*/
+    .modalStatus {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 99; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .modalStatus-content {
+        text-align: center;
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 1em;
+        border: 1px solid #888;
+        width: 100%; /* Could be more or less, depending on screen size */
+        color: black;
+    }
+</style>
+
+<div class="main-container">
+    <div class="content">
+        <div class="content-body">
+            <p>@ViewBag.Title</p>
+            <p>Ver Referencia&nbsp;<a href="javascript: void window.open('https://www.nuget.org/packages/EPPlus')">[Epp Plus]</a></p>
+            <p>Ver Referencia&nbsp;<a href="javascript: void window.open('https://www.npmjs.com/package/jspdf')">[jsPDF]</a></p>
+            <p>Ver Referencia&nbsp;<a href="javascript: void window.open('https://www.chartjs.org/')">[chartJS]</a></p>
+        </div>
+        <hr />
+                 <div id="tabContent">
+                    <!-- TAB EMCABEZADOS  - INICIO         -->
+                    <ul>
+                        <li><a href="#tabs-1">Listado</a></li>
+                        <li><a href="#tabs-2">Estadísticas</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <div id="gridContainer" style="font-size:xx-small;background:#666666;padding:10px;">
+                            <!-- INICIO LISTADO -->
+                            <table id="logDemoTable" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>id_Column</th>
+                                        <th>pageName</th>
+                                        <th>accessDate</th>
+                                        <th>ipValue</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>id_Column</th>
+                                        <th>pageName</th>
+                                        <th>accessDate</th>
+                                        <th>ipValue</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <!-- FIN LISTADO    -->
+                        </div>
+                        <hr />
+                        <div>
+                            <input type="button" id="btnGenerarInforme" value="[Generar Informe XLS]"/>
+                        </div>
+                        <hr />
+                        <div>
+                            <a href="#" id="DownloadFile">[Descargar Informe XLS]</a>
+                        </div>
+                    </div>
+                    <div id="tabs-2">
+                        <!-- PANEL GRAFICO / INICIO -->
+                        <div id="divPieChart" style="display: block; box-sizing: border-box; height: 400px; width: 800px;padding:5px;" height="400" width="800">
+                            <canvas id="pieChart" style="background-color:bisque;padding:10px 10px 10px 10px;">
+                            </canvas>
+                        </div>
+                        <!-- PANEL GRAFICO / FIN     -->
+                        <hr />
+                        <!-- PANEL DESCARGA / INICIO -->
+                        <div id="divdescargapdf" style="display: block" align="right">
+                            <input id="GetPDF" type="button" title="[GENERAR PDF]" value="[GENERAR PDF]">           
+                        </div>
+                    </div>
+                </div>
+        <br />
+        <hr />
+        <a href="../Demos/_DemosIndex?lang=1">Volver al Menú</a>
+        <hr />
+        <!-- INICIO VENTANA MODAL TRANSCURSO OPERACION -->
+        <div id="statusWindow" class="modalStatus" style="display:none">
+            <div class="modalStatus-content">
+                ... Procesando ...
+            </div>
+        </div>
+        <!-- FIN VENTANA MODAL TRANSCURSO DE OPERACION -->
+    </div>
+</div>
+
+<!-- INICIO CDN -->
+<script type="text/javascript"
+        src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.datatables.net/v/ju/dt-1.12.1/r-2.3.0/datatables.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/localization/messages_es.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+  integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+  crossorigin="anonymous"></script>
+<!-- FIN CDN -->
+
+<script type="text/javascript">
+    //
+    let table;
+    let pieChart;
+    //
+    $(document).ready(function () {
+            try {
+                //
+                console.log('[LOG DEMO]');
+                //
+                $(function () {
+                    $("#tabContent").tabs();
+                });
+                //
+                $('#logDemoTable').DataTable({
+                    "ajax": { "url": "GenerarInformeJson", "method": "POST", "dataSrc": "" },
+                    "columns": [
+                        { "data": "id_Column"   },
+                        { "data": "pageName"    },
+                        { "data": "accessDate"  },
+                        { "data": "ipValue"     }
+                    ]
+                });
+                //
+                SetChart();
+            }
+            catch (error) {
+                //
+                console.error(error);
+                //
+                alert('error cargando pagina');
+            };
+     });
+    //
+    $("#btnGenerarInforme").click(function () {
+        //
+        _ShowProgressBar();
+        //
+        console.log("GENERANDO INFORME XLS");
+        //
+        var p_url = "GenerarInformeXLS";
+        //
+        $.ajax({
+            url: p_url
+        })
+        .done(function (data) {
+            //
+            console.log("RESULTADO FUNCION : " + data);
+            //
+            if (data === "[ERROR]") 
+            {
+                //
+                alert("ERROR EN FUNCION");
+            }
+            else
+            {
+                //
+                var urlFile      = '../xlsx/' + data;
+                var downloadLink = DebugHostingContent("javascript:void window.open('" + urlFile + "');");
+                //
+                 $("#DownloadFile").attr("href", downloadLink );
+                //
+                alert("SE GENERO CORRECTAMENTE EL ARCHIVO");
+            }
+            //
+            _HideProgressBar();
+            //
+            return true;
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            //
+            _HideProgressBar();
+            //
+            console.log('ERROR EN FUNCION : ' + textStatus);
+            //
+            console.log('ERROR EN FUNCION : ' + errorThrown);
+            //
+            alert("ERROR EN FUNCION");
+            //
+            return false;
+        });
+    });
+    //
+    $("#GetPDF").click(function() {
+        //
+        console.log("GET PDF");
+        //
+        GetPdf();
+    });
+    //
+    function DebugHostingContent(msg) {
+        //
+        console.log("cadena a evaular : " + msg);
+
+        //
+        let regEx = /(.*)(<!--SCRIPT GENERATED BY SERVER! PLEASE REMOVE-->)(.*\w+.*)(<!--SCRIPT GENERATED BY SERVER! PLEASE REMOVE-->)(.*)/;
+        //
+        var strMsg = msg.replace(/(\r\n|\n|\r)/gm, "");
+        //
+        var matches = strMsg.match(regEx);
+
+        if (matches != null) {
+            //
+            for (var index = 1; index < matches.length; index++) {
+                //
+                var matchValue = matches[index];
+                //        
+                console.log("coincidencia : " + matchValue);
+
+                //
+                if ((matchValue.indexOf("<!--SCRIPT GENERATED BY SERVER! PLEASE REMOVE-->") != -1) && (matchValue.trim() != "")) {
+                    //
+                    strMsg = strMsg.replace(matchValue, "");
+                    //
+                    console.log("REEMPLAZANDO. NUEVA CADENA : " + strMsg);
+                }
+
+                //
+                if ((matchValue.indexOf("<center>") != -1) && (matchValue.trim() != "")) {
+                    //
+                    strMsg = strMsg.replace(matchValue, "");
+                    //
+                    console.log("REEMPLAZANDO. NUEVA CADENA : " + strMsg);
+                }
+            }
+        }
+        else
+            console.log("NO_HAY_COINCIDENCIAS");
+
+        //
+        console.log("CADENA DEPURADA : " + strMsg);
+
+        //
+        return strMsg;
+    }
+    //
+    function _ShowProgressBar() {
+        //
+        var modal = document.getElementById("statusWindow");
+        modal.style.display = "block";
+        //
+        console.log('status window show');
+        //
+    }
+    //
+    function _HideProgressBar() {
+        //
+        var modal = document.getElementById("statusWindow");
+        modal.style.display = "none";
+        modal.style.display = "hidden";
+        //
+        console.log('status window hide');
+        //
+    }
+    //
+    function SetChart() {
+        //
+        console.log("[LOG DEMO] - SET CHART ");
+        //
+        var url_post         = "GetConsultaLogStatPost";
+        //
+        $.ajax({
+            url: url_post
+            , method: "POST"
+            , dataType: "JSON"
+            , success: function(jsondata) {
+                //
+                console.log("[LOG DEMO] - SET CHART - DATA " + JSON.stringify(jsondata));
+                //
+                const statLabels          = [];
+                const statData            = [];
+                const statBackgroundColor = [];
+                //
+                $.each(jsondata, function(index, value) {
+                    //
+                    console.log("[SI-SPAE-WEB] - GET STAT - RESULT : index [" + index + "] value={"
+                        + jsondata[index]["pageName"]
+                        + "-" + jsondata[index]["ipValue"] + "}");
+                    //
+                    statLabels.push(jsondata[index]["pageName"] + " - " + jsondata[index]["ipValue"]);
+                    statData.push(Number(jsondata[index]["ipValue"]));
+                    statBackgroundColor.push('rgb('
+                        + (Number(jsondata[index]["ipValue"]) / 4) + ','
+                        + (Number(jsondata[index]["ipValue"]) / 3) + ','
+                        + (Number(jsondata[index]["ipValue"]) / 2) + ')');
+
+                });
+                //
+                const ctx = document.getElementById('pieChart').getContext('2d');
+                //
+                const data = {
+                    labels: statLabels,
+                    datasets: [{
+                        label: 'CONTEO DE SESIONES',
+                        data: statData,
+                        backgroundColor: statBackgroundColor,
+                        hoverOffset: 4
+                    }]
+                };
+                //
+                if (pieChart) {
+                    pieChart.destroy();
+                }
+                pieChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'CONTEO DE SESIONES'
+                            }
+                        }
+                    }
+                });
+            }
+            , error: function (xhr, textStatus, errorThrown) {
+                //
+                alert("Se presentó un fallo.<br/>Favor comunicarse con el administrador del sistema");
+                //
+                if (xhr != null) {
+                    //
+                    console.log('[LOG DEMO] - SET CHART - ERROR :   ' + xhr.responseText);
+                }
+                //
+                _HideProgressBarTimer();
+            }
+        });
+    };
+    //
+    function GetPdf()
+    {   //
+        html2canvas($("#pieChart")[0]).then((canvas) => {
+            //
+            var w = document.getElementById("divPieChart").offsetWidth;
+            var h = document.getElementById("divPieChart").offsetHeight;
+            //
+            var imgData              = canvas.toDataURL('image/png');
+            //
+            var p_orientation        = 'p';  // LANDSCAPE  - POTRAIT
+            var p_measurement_unit   = 'mm'; // MILIMETERS
+            var doc                  = new jsPDF(p_orientation, p_measurement_unit );
+            //
+            doc.addImage(imgData, 'PNG', 20, -10);
+            //
+            var img = canvas.toDataURL("image/jpeg", 1);
+            var doc = new jsPDF('L', 'px', [w, h]);
+            doc.addImage(img, 'JPEG', 0, 0, w, h);
+            doc.save('sample-file.pdf');
+        });
+    };
+</script>

@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <style>
+        /* Apply styles to text appearance  */    
+        .textAppareanceStyle
+        {
+            background-color : burlywood;
+            border-style     : solid;
+            border-width     : 1px;
+            border-collapse  : separate;
+            border-color     : brown;
+            margin           : 10px 10px 10px 10px;
+            padding          : 10px 10px 10px 10px;
+            width            : auto;
+            height           : auto;
+        }
+        @import url('https://fonts.cdnfonts.com/css/special-beloved');
+        .fontFamily
+        {
+            background-color : burlywood;
+            border-style     : solid;
+            border-width     : 1px;
+            border-collapse  : separate;
+            border-color     : brown;
+            margin           : 10px 10px 10px 10px;
+            padding          : 10px 10px 10px 10px;
+            width            : auto;
+            height           : auto;
+            font-family      : 'Special Beloved', sans-serif;
+        }
+        .fontSize
+        {
+            background-color : burlywood;
+            border-style     : solid;
+            border-width     : 1px;
+            border-collapse  : separate;
+            border-color     : brown;
+            margin           : 10px 10px 10px 10px;
+            padding          : 10px 10px 10px 10px;
+            width            : auto;
+            height           : auto;
+        }        
+        /* Apply styles to text aligment, spacing and identation */
+        .textAligment
+        {
+            background-color : burlywood;
+            border-style     : solid;
+            border-width     : 1px;
+            border-collapse  : separate;
+            border-color     : brown;
+            margin           : 10px 10px 10px 10px;
+            padding          : 10px 10px 10px 10px;
+            width            : 300px;
+            height           : 220px;
+            text-align       : right;
+        }
+        .textIdentation
+        {
+            background-color : burlywood;
+            border-style     : solid;
+            border-width     : 1px;
+            border-collapse  : separate;
+            border-color     : brown;
+            margin           : 10px 10px 10px 10px;
+            padding          : 10px 10px 10px 10px;
+            text-indent      : 200px;
+        }
+        .letterSpacing
+        {
+            background-color : burlywood;
+            border-style     : solid;
+            border-width     : 1px;
+            border-collapse  : separate;
+            border-color     : brown;
+            margin           : 10px 10px 10px 10px;
+            padding          : 10px 10px 10px 10px;
+            letter-spacing   : 8px;
+        }
+        .wordSpacing
+        {
+            background-color : burlywood;
+            border-style     : solid;
+            border-width     : 1px;
+            border-color     : brown;
+            margin           : 10px 10px 10px 10px;
+            padding          : 10px 10px 10px 10px;
+            word-spacing     : 8px;
+        }
+        /* Apply styles to text hyphenation */
+        dd {
+            width: 55px;
+            border: 1px solid black;
+            }
+            dd.none {
+            hyphens: none;
+            }
+            dd.manual {
+            hyphens: manual;
+            }
+            dd.auto {
+            hyphens: auto;
+        }
+        </style>
+        <link href="https://fonts.cdnfonts.com/css/special-beloved" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Objective 4.1. Style HTML text properties</h1>
+        <hr>
+        <h2>Apply styles to text appearance</h2>
+        <hr>
+        <h3>Apply color to text</h3>
+        <p class="textAppareanceStyle">
+            <span style="font-size:large;padding:5px;color:#00ff00;">Hexadecimal Green</span>  
+            <br>  
+            <span style="font-size:x-large;padding:5px;color:green;">Color Name Green</span>
+            <br>  
+            <span style="font-size:x-smmall;padding:5px;color:rgb(0,255,0);">RGB Green</span>    
+            <br>
+        </p>
+        <hr>
+        <h3>Apply bold to text</h3>
+        <p class="textAppareanceStyle" style="font-weight:bold">
+            FONT WEIGHT BOLD
+        </p>
+        <hr>
+        <h3>Apply italic style to text</h3>
+        <p class="textAppareanceStyle" style="font-style: italic;">
+            FONT STYLE ITALIC
+        </p>
+        <hr>
+        <h2>Apply styles to text font</h2>
+        <hr>
+        <h3>Font Family</h3>
+        <p class="fontFamily">
+            About Special Beloved Font Family
+        </p>
+        <hr>
+        <h3>Font Size</h3>
+        <p class="fontSize" style="font-size: xx-small;">
+            font size : xx-small;
+        </p>
+        <p class="fontSize" style="font-size: xx-large;">
+            font size : xx-large;
+        </p>
+        <hr>
+        <h2>Apply styles to text aligment, spacing and identation</h2>
+        <h3>Text Aligment</h3>
+        <p class="textAligment">
+            In CSS, you can align text in various ways using the text-align property. Here are some common options:
+            <br/>
+            <br/>
+                - Left-align text   : 'text-align: left;'<br>
+                - Center-align text : 'text-align: center;'<br>
+                - Right-align text  : 'text-align: right;'<br>
+                - Justify text      : 'text-align: justify;'<br>
+            <br/>
+            You can apply the text-align property to various HTML elements like p, h1, h2, div, span, etc. 
+        </p>
+        <h3>Text identation</h3>
+        <div class="textIdentation">
+            Text idented at 200px
+        </div>
+        <h3>Text spacing</h3>
+        <div class="letterSpacing">
+            Letters are spaced
+        </div>
+        <br>
+        <div class="wordSpacing">
+            Words are spaced
+        </div>
+        <hr>
+        <h2>Apply styles to text hyphenation</h2>
+        <dl>
+            <dt><code>none</code>: no hyphen; overflow if needed</dt>
+            <dd lang="en" class="none">An extreme&shy;ly long English word</dd>
+            <dt>
+              <code>manual</code>: hyphen only at &amp;hyphen; or &amp;shy; (if needed)
+            </dt>
+            <dd lang="en" class="manual">An extreme&shy;ly long English word</dd>
+            <dt><code>auto</code>: hyphens where the algorithm decides (if needed)</dt>
+            <dd lang="en" class="auto">An extreme&shy;ly long English word</dd>
+        </dl>
+        <hr>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = @"[MCSD CERTIFICATION EXAMS]";
+}
+
+<style>
+    /*------------------------------------------------*/
+    /* ESTILOS STATUS DE OPERACION                    */
+    /*------------------------------------------------*/
+    .modalStatus {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 99; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .modalStatus-content {
+        text-align: center;
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 1em;
+        border: 1px solid #888;
+        width: 100%; /* Could be more or less, depending on screen size */
+        color: black;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<div class="main-container">
+    <div class="content">
+        <div class="content-body">
+            <p>@ViewBag.Title</p>
+        </div>
+        <hr />
+        <!--INICIO CONTENIDO -->
+        <a href="~/mcsd/Exam_70_480_Rick_Delorme/Index.html" target="_blank">[EXAM REF - 70-480] - Programming HTML5 with Javascript and CSS3</a>
+        <!--FIN    CONTENIDO -->
+        <br />
+        <br />
+        <a href="../Demos/_DemosIndex?lang=3">Volver al Menú</a>
+        <!-- INICIO VENTANA MODAL TRANSCURSO OPERACION -->
+        <div id="statusWindow" class="modalStatus" style="display:none">
+            <div class="modalStatus-content">
+                ... Procesando ...
+            </div>
+        </div>
+        <!-- FIN VENTANA MODAL TRANSCURSO DE OPERACION -->
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        try
+        {
+            //
+            console.log('[MCSD CERTIFICATION EXAMS]');
+        }
+        catch (error) {
+            //
+            console.error(error);
+            //
+            alert('error cargando pagina');
+        }
+    });
+    //
+    function _ShowProgressBar() {
+        //
+        var modal           = document.getElementById("statusWindow");
+        modal.style.display = "block";
+        //
+        console.log('status window show');
+        //
+    }
+    //
+    function _HideProgressBar() {
+        //
+        var modal = document.getElementById("statusWindow");
+        modal.style.display = "none";
+        modal.style.display = "hidden";
+        //
+        console.log('status window hide');
+        //
+    }
+    //
+    function pathToAction()
+    {
+            var pathToAction = '@Url.Content("~")';
+
+            if (pathToAction == "/")
+                pathToAction = "";
+            else
+                pathToAction = pathToAction.substring(0, pathToAction.length);
+
+            return pathToAction;
+    }
+ </script>

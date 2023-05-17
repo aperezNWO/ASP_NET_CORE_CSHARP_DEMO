@@ -1,0 +1,409 @@
+<html>
+    <head>
+        <style>
+        .paragraph
+        {
+            width:90%;
+            height:auto;
+            text-justify: newspaper;
+            font-family:Arial, Helvetica, sans-serif;
+            /*
+            border-style: solid;
+            border-color: black;
+            border-width: 5px;
+            */
+        }
+        .paragraph #text_1
+        {
+            border : 5px solid black;
+            border-spacing: 5px;
+            background-color: coral;
+        }
+        .paragraph #text_2
+        {
+            background-color:chartreuse;
+            border-spacing: 5px;
+            border : 5px solid black;
+        }
+
+        .paragraph #text_3
+        {
+            background-color:aquamarine;
+            border-spacing: 5px;
+            border : 5px solid black;
+            width:400px;
+            height:auto;
+            border-width: 20px;
+            border-spacing: 5px;
+            border-collapse: separate;
+            border-color: brown;
+            padding : 50px;
+        }
+        .customTable
+        {
+            width:90%;
+            height:auto;
+            background-color : burlywood;
+            border-style     : solid;
+            border-color     : black;
+            text-justify     : kashida;
+            border-width     : 20px;
+            border-spacing   : 5px;
+            border-collapse  : separate;
+            border-color     : brown;
+        }
+        img._left
+        {
+            background-color    : blue;
+            float               : left;
+            width               : 100px;
+            height              : auto;
+            padding             : 15px;
+            border-spacing      : 5px;
+            margin              : 15px;
+        }
+        img._right
+        {
+            background-color: blue;
+            float           : right;
+            width           : 100px;
+            height          : auto;
+            padding         : 15px;
+            border-spacing  : 5px;
+            margin          : 15px;
+        }
+        .img_repeate:nth-child(1n+0)
+        {
+            background-color: blue;
+            width           : 100px;
+            height          : auto;
+            padding         : 15px;
+            border-spacing  : 5px;
+            margin          : 15px;
+            position        : relative;
+            /*left            : -25px;*/
+            top             : 5px;        
+        }
+        .img_repeate:nth-child(2)
+        {
+            position        : relative;
+            left            : 25px;
+        }
+        .img_repeate:nth-child(3)
+        {
+            position        : relative;
+            left            : 50px;
+        }  
+        .img_repeate:nth-child(4)
+        {
+            position        : relative;
+            left            : 75px;
+        }  
+        .clipper_1
+        {
+            background-color: blue;
+            position        : relative;
+            left            : 25px;
+            clip-path       : polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            padding         : 15px;
+            border-spacing  : 5px;
+            margin          : 15px;
+
+            border  : 20px 20px 20px 20px;
+            border-width: 20px;
+            border-color: blueviolet;
+            border-style: solid;
+            padding : 15px 15px 15px 15px;
+            margin  : 10px 10px 10px 10px;
+            margin  : 50px;
+            background-color: cornflowerblue;  
+        }
+        .clipper_2
+        {
+            background-color: blue;
+            position        : relative;
+            left            : 25px;
+            clip-path       : polygon(0% 0%, 50% 0%, 50% 50%, 0% 50%);
+            padding         : 15px;
+            border-spacing  : 5px;
+            margin          : 15px;
+
+            border  : 20px 20px 20px 20px;
+            border-width: 20px;
+            border-color: blueviolet;
+            border-style: solid;
+            padding : 15px 15px 15px 15px;
+            margin  : 10px 10px 10px 10px;
+            margin  : 50px;
+            background-color: cornflowerblue;  
+        }
+        .BorderPaddingMargin
+        {
+            border  : 20px 20px 20px 20px;
+            border-width: 20px;
+            border-color: blueviolet;
+            border-style: solid;
+            padding : 15px 15px 15px 15px;
+            margin  : 10px 10px 10px 10px;
+            margin  : 50px;
+            background-color: cornflowerblue;
+
+        }
+        .BackgroundImage
+        {
+            background-color: olive;
+            background-image: url('Borland_logo.jpg') ;
+            background-size : 150px;
+            background-repeat:repeat;
+            width:150px;
+            height:150px;
+            color:yellow;
+            vertical-align: middle;
+            text-align: center;
+
+            border  : 20px 20px 20px 20px;
+            border-width: 20px;
+            border-color: blueviolet;
+            border-style: solid;
+            padding : 15px 15px 15px 15px;
+            margin  : 10px 10px 10px 10px;
+            margin  : 50px;
+            background-color: cornflowerblue;           
+            
+        }
+        #radial_gradient {
+            height: 200px;
+            width:  200px;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+        }
+        #linear_gradient {
+            height: 200px;
+            width:  200px;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, red , yellow);
+        }
+        #text_shadow
+        {
+            border  : 20px 20px 20px 20px;
+            border-width: 20px;
+            border-color: blueviolet;
+            border-style: solid;
+            padding : 15px 15px 15px 15px;
+            margin  : 10px 10px 10px 10px;
+            margin  : 50px;
+            font-size: x-large;
+            font-family:Arial, Helvetica, sans-serif;
+            color : blue;
+            height: auto;
+            width:  400px;
+            background-color: aquamarine;
+            text-shadow: 4px 4px #FF0000;
+        }
+        #box_shadow_1
+        {
+            width:100px;
+            height:100px;
+            border : solid 1px black;
+            box-shadow: 10px 10px;
+        }
+        #box_shadow_2
+        {
+            width:100px;
+            height:100px;
+            border : solid 1px black;
+            box-shadow: 10px 10px 10px;
+        }
+        #box_shadow_3
+        {
+            width:100px;
+            height:100px;
+            border : solid 1px black;
+            box-shadow: 10px 10px inset;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Objective 4.2 : Style HTML Box properties</h1>
+        <hr>
+        <div class="paragraph">
+            <p id="text_1">
+                SCSS (Sassy CSS) is a type of preprocessor for Cascading Style Sheets (CSS). It is a superset of CSS, 
+                
+                meaning that all valid CSS is also valid SCSS. SCSS allows developers to use variables, functions, nesting, 
+                
+                and other features that are not available in traditional CSS, 
+                
+                making it easier to write and maintain complex stylesheets.
+
+                SCSS is compiled into standard CSS, which can then be used in web pages. This compilation process can be done
+
+                using a command line tool, a build system like Gulp or Grunt, or an integrated development environment (IDE) like Visual Studio Code.
+
+                Overall, SCSS can help streamline the process of writing and maintaining CSS stylesheets, and is widely used in web development today.
+            </p>
+            <p id="text_2">
+                SCSS is maintained and developed by the open-source community. The original version of SCSS was developed by Hampton Catlin, 
+                
+                and later maintained by Natalie Weizenbaum, both of whom were developers at the company called "Hunch". After Hunch was acquired by eBay, 
+                
+                Weizenbaum continued to work on SCSS, which eventually became part of the open-source project called Sass.
+
+                Today, Sass is maintained by a team of developers and contributors from around the world. 
+                
+                The project is hosted on GitHub, where developers can report issues, suggest features, and contribute to the codebase.
+
+                As for standardization, SCSS is not an official standard, but it is widely used and has become a de facto standard in the web development industry. 
+                
+                Many popular front-end frameworks and tools, such as Bootstrap and Foundation, use SCSS as their default stylesheet language, 
+                
+                and it is widely supported by modern web browsers.
+            </p>
+        <hr>    
+        <table class="customTable" border="1px">
+            <thead><h4>Some of the key features of SCSS include:</h4></thead>
+            <tbody>
+                <tr>
+                    <td>  
+                    Variables: Developers can define variables to hold values such as colors, font sizes, and other commonly used values. This allows for easier maintenance of stylesheets, as changes can be made in a single location.
+                    </td> 
+                    <td>
+                    Nesting: SCSS allows developers to nest CSS selectors, making it easier to write and understand styles for nested HTML elements.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    Mixins: Mixins allow developers to define reusable blocks of styles that can be included in other selectors. This can help reduce the amount of duplicate code in a stylesheet.
+                    </td>
+                    <td>
+                    Functions: SCSS supports functions, which can be used to perform calculations, manipulate colors, and other tasks.
+                    </td>
+                </tr>
+            </tbody>
+            </table>    
+        <hr>
+        <p id="text_3">
+            CSS inheritance is the mechanism by which styles applied to a parent element are passed down to its child elements. 
+            <img src="Borland_logo.jpg" class="_right">
+            This means that if you set a style on a parent element, all of its child elements will inherit that style by default, 
+            
+            unless you override it with a specific style rule.
+
+            CSS inheritance applies to most properties, but not all. In general, properties related to layout and positioning 
+            
+            (such as width, height, margin, padding, and position) are not inherited, 
+            <img src="Borland_logo.jpg" class="_left">            
+            while properties related to typography and appearance (such as color, font-family, background-color, and text-align) are inherited.
+        </p>  
+        <hr> 
+        </div>
+        <div class="paragraph">
+            <img src="Borland_logo.jpg" class="img_repeate">   
+            <img src="Borland_logo.jpg" class="img_repeate">   
+            <img src="Borland_logo.jpg" class="img_repeate">
+            <img src="Borland_logo.jpg" class="img_repeate">      
+        </div>
+        <hr> 
+        <h2><b>Applying styles to alter apperance attributes</b></h2>
+        <h3>Padding, Margin and Borders</h3>
+        <p style="background-color: crimson;">[TEXT BEFORE]</p>
+        <span style="background-color: darkgoldenrod;">
+            <p class="BorderPaddingMargin">
+                <span>
+                    <b>CSS Border:</b>
+
+                    The border property in CSS allows you to specify the appearance of the border of an element. 
+                    You can set the border width, style, and color using the border property.
+
+                    <br/>         
+                    Example:
+
+                    .border-example {
+                        border: 1px solid black;
+                    }
+                </span>
+                <br>
+                <span>
+                    <b>CSS Padding:</b>
+                    The padding property in CSS allows you to add space between the content of an element and its border. You can set the padding on all four sides using the padding property.
+                    <br>
+                    Example:
+
+                    .padding-example {
+                        padding: 10px;
+                    }
+                </span>
+                <br>
+                <span>
+                    <b>CSS Margin:</b>
+
+                    The margin property in CSS allows you to add space between an element's border and adjacent elements. 
+                    You can set the margin on all four sides using the margin property.
+                    <br>
+                    Example:
+
+                    .margin-example {
+                        margin: 10px;
+                    }
+                    <br>
+                    It's important to note that the order of these properties matter when combined. The order is typically specified 
+                    as: margin, border, padding.
+                    <br>
+                    Example:
+
+                    .mbp-example {
+                        margin: 10px;
+                        border: 1px solid black;
+                        padding: 10px;
+                    }
+                    This will set a margin of 10px, a border of 1px solid black, and a padding of 10px for the element with the class "mbp-example".
+                </span>
+            </p>
+        </span>
+        <p style="background-color: crimson">[TEXT AFTER]</p>
+        <hr>
+        <h2><b>Applying styles to alter graphics efects</b><h2>
+        <h3>Applying transparency/opacity</h3>
+        <p style="background-color: lightgrey;opacity: 1.0;">
+            <b>Text without opacity</b>
+        </p>
+        <p style="background-color: lightgrey;opacity: 0.5;">
+            <b>Text with opacity</b>
+        </p>
+        <hr>
+        <h3>Applying a background image</h3>
+        <p class="BackgroundImage">
+            <b>Borland Logo</b>
+        </p>
+        <hr>
+        <h3>Applying gradients</h3>
+        <h4>Linear Gradient</h4>
+        <div id="linear_gradient"></div>        
+        <h4>Radial Gradient</h4>
+        <div id="radial_gradient"></div>
+        <hr>
+        <h3>Applying a shadow efect</h3>
+        <h4>Box Shadow #1</h4>
+        <div id="box_shadow_1">
+            &nbsp;
+        </div>
+        <h4>Box Shadow #2</h4>
+        <div id="box_shadow_2">
+            &nbsp;
+        </div>
+        <h4>Box Shadow #3</h4>
+        <div id="box_shadow_3">
+            &nbsp;
+        </div>
+        <h4>Text with Shadow</h4>
+        <p id="text_shadow">
+            TEXT WITH SHADOW
+        </p>
+        <hr>
+        <h3>Applying clipping</h3>
+        <img src="Borland_logo.jpg" class="clipper_1">   
+        <hr>
+        <img src="Borland_logo.jpg" class="clipper_2">  
+        <hr>
+    </body>
+</html>

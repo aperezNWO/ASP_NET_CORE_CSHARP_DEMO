@@ -1,0 +1,132 @@
+<html>
+<head>
+<style>
+    .paragraph::before
+    {
+        content:' [*****]CONTENT BEFORE[*****] ';
+    }
+    .paragraph::after
+    {
+        content:' [=====]CONTENT AFTER[=====]  ';
+    }
+    .paragraphContent::first-letter
+    {
+        color: red;
+    }
+    .paragraphContent::first-line
+    {
+        color:green;
+        font-size:x-large;
+    }
+    .paragraphList li:first-child
+    {
+        color:blue;
+    }
+    input:disabled
+    {
+        background-color:#ccc;
+    }
+    input:enabled
+    {
+        background-color: bisque;
+    }
+    input:required
+    {
+        border:2px solid red;
+    }
+    input[type="checkbox"]:checked 
+    {
+        border:2px solid blue;
+    }
+    input[type="date"]
+    {
+        background-color: blueviolet;
+    }
+    a:link
+    {
+        color:green
+    }
+    a:hover
+    {
+        color:red;
+    }
+    a:visited
+    {
+        color:black;
+    }
+    a[href="http://www.ibm.com"]
+    {
+        background-color: aqua;
+    }
+    input[class="customRequired"] 
+    {
+        border:2px solid #ddd;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .customLink[href="http://www.google.com"]
+    {
+        background-color: green;
+    }
+    .customLink.facebook
+    {
+        background-color               : black;
+        color                          : yellow;
+    }
+    a[customAttribute*="value_1 value_2"]
+    {
+        font-size: xx-large;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    a {
+        font-size: x-large !important;
+    }
+    a {
+        font-size: x-small;
+    }
+    a {
+        font-size: xx-small;
+    }
+</style>
+</head>
+<body>
+    <div class="paragraph">
+        <hr>
+        <h1>Paragraph Test</h1>
+        <div class="paragraphContent">
+            Paragraph Content Line 1
+            <br/>
+            <br/>
+            Paragraph Content Line 2
+            <br/>
+            <br/>
+        </div>
+        <hr>
+        <div>
+            <ui class="paragraphList">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ui>
+        </div>
+        <hr>
+        ENTER FIRST VALUE  : <input id="input_1" name="input_1" value="value_1" disabled="disabled" />
+        <br/>
+        ENTER SECOND VALUE : <input id="input_2" name="input_2" value="value_2" required="required" class="customRequired"/>
+        <br/>
+        ENTER THIRD VALUE  : <input id="input_3" name="input_3" value="value_3" required="required"/>
+        <br/>
+        ENTER FOURTH VALUE : <input id="input_4" name="input_4" value="value_4" type="checkbox" required="required"/>
+        <br/>
+        ENTER FIFTH VALUE  : <input id="input_5" name="input_5" value="value_5" type="date"/>
+        <br/>
+        <hr>
+        <a href="http://www.google.com/help" target="_blank" class="customLink">GOOGLE (HELP)</a>
+        <br/>
+        <a href="http://www.facebook.com"    target="_blank" class="customLink facebook" customAttribute="value_1 value_2">FACEBOOK</a>
+        <br/>
+        <a href="http://www.ibm.com"         target="_blank" class="customLink">IBM</a>
+        <br/>
+        <hr>
+    </div>
+</body>
+</html>

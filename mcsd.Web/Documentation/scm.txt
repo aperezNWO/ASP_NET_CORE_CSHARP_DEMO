@@ -1,0 +1,78 @@
+﻿/****************************************************************/
+-- SCM
+/****************************************************************/
+
+=================================================================
+-- HOSTING / NET CORE DEMO / FUENTES
+=================================================================
+url      : df149032.visualstudio.com / https://www.github.com/aperezNWO/learningpath.
+user     : df149032@outlook.com      / aperezNWO  / alejandro.perez.acosta@hotmail.com
+pwd      : 149032df                  / p@bloP3rez.2023.01
+=================================================================
+
+=================================================================
+-- HOSTING / NET CORE DEMO & ANGULAR / PUBLICACION REMOTA
+=================================================================
+url      : http://www.somee.com
+user     : alejandro.perez.acosta@hotmail.com
+pwd      : p@bloP3rez.2023.01
+url app  : http://mcsd.somee.com/
+ftp      : (no fue posible usar filezilla. utilizar zip upload)
+ftp url  :
+ftp://mcsd.somee.com/www.mcsd.somee.com
+ftp://198.37.116.42/www.mcsd.somee.com
+ftp usr  : aperezNWO
+database : mcsdexnacato
+
+workstation id=mcsdexnacato.mssql.somee.com;packet size=4096;
+user id=aperezNWO_SQLLogin_1;
+pwd=nnsh89yjyc;
+data source=mcsdexnacato.mssql.somee.com;
+persist security info=False;
+initial catalog=mcsdexnacato
+
+=================================================================
+-- HOSTING / NET CORE DEMO & ANGULAR / PUBLICACION LOCAL (UV)
+=================================================================
+url  : localhost:82
+path : E:\pablo.perez\ONEDRIVE\_root\Personal\dev\iis\learningPath
+=================================================================
+
+=================================================================
+-- HOSTING / NET CORE DEMO / FUENTES_BACKUP & ANGULAR
+=================================================================
+url  : https://github.com/aperezNWO
+usr  : alejandro.perez.acosta@hotmail.com
+pwd  : p@bloP3rez.2023.01
+
+repo backup  : https://github.com/aperezNWO/LearningPath
+repo angular : 
+
+_________________________________________________________________________________________________________________________________
+Aplicativo           | 	Repostorio	                                              | Tutorial / subject
+_________________________________________________________________________________________________________________________________
+Getting Started	     |  https://github.com/aperezNWO/AngularGettingStarted        |	https://angular.io/start
+Tour of Heroes	     |  https://github.com/aperezNWO/TourOfHeoresVSCode	          | https://angular.io/tutorial/tour-of-heroes
+Template Driven Form |	https://github.com/aperezNWO/AngularTemplateDrienForm	  | https://angular.io/guide/forms
+Angular UIX          |  https://github.com/aperezNWO/AngularUIX                   | DATAGRID DEMO USING SERVICES (MOVE TO TUTORIALS)
+Async Prog           |  https://github.com/aperezNWO/AngularObservable            | OBSERVABLE & RXjs DEMO       (MOVE TO TUTORIALS)
+consulta log mcsd    |  https://github.com/aperezNWO/ConsultaLogApp               | https://mcsd.somee.com/wwwroot/_angular/AngularConsultaLog/
+consulta log spae    |  https://github.com/aperezNWO/angularspaeconsultalog       | (n/a)
+Angular Dijkstra     |  https://github.com/aperezNWO/AngularDijkstra              | [empty project]
+Angular Learning     |  https://github.com/aperezNWO/AngularLearningPath          | [empty project]
+[stack blitz proj]   |  https://github.com/aperezNWO/angular-fmh1hc-v82v9l        | https://stackblitz.com/edit/angular-fmh1hc-v82v9l
+TypeScript Get Str.  |  https://github.com/aperezNWO/TypeScriptGettingStarted     | [vs code local project]
+_________________________________________________________________________________________________________________________________
+
+
+=================================================================
+
+
+=================================================================
+-- HOSTING / NET CORE DEMO [DISABLED]
+=================================================================
+url      : http://www.somee.com
+user     : alejandro.perez.acosta@gmail.com
+pwd      : p@bloP3rez.2023.01
+url app  : http://learningpath.somee.com/
+=================================================================
