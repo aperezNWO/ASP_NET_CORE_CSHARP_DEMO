@@ -1,9 +1,9 @@
-﻿using System;
+﻿using mcsd.Core.Library.DataAccess.Models;
+using System;
 using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Text;
-using mcsd.Library.DataAccess;
 
 namespace mcsd.Library.Managers
 {
@@ -145,7 +145,7 @@ namespace mcsd.Library.Managers
             get
             {
                 //
-                string resultsURL = string.Format(@"../{0}/{1}"
+                string resultsURL = string.Format(@"/wwwroot/{0}/{1}"
                                 , CSVManager.DirectorioLocalCSV
                                 , this.NombreDocumento);
                 //

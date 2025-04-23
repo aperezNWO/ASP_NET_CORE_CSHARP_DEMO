@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>mcsd.Service</name>
+    </assembly>
+    <members>
+        <member name="M:mcsd.Web.Controllers.DemosController._SetLog(System.String,mcsd.Core.Library.DataAccess.Models.LogModel.LogType)">
+            <summary>
+            INGRESAR UN REGISTRO AL LOG
+            </summary>
+            <param name="p_logMsg"></param>
+            <param name="logType"></param>        
+            <returns></returns>
+        </member>
+        <member name="M:mcsd.Service.Program.Main(System.String[])">
+            <summary>
+            MAIN ENTRANCE
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:mcsd.Service.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

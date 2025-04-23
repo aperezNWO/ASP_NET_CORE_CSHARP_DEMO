@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\pablo.perez\dev\mcsdWebApiTFS\mcsd.Service\mcsd.Service\mcsd.Service.xml</DocumentationFile>
+    <Version>1.0.24</Version>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UnitTesting\**" />
+    <Content Remove="UnitTesting\**" />
+    <EmbeddedResource Remove="UnitTesting\**" />
+    <None Remove="UnitTesting\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".config\dotnet-tools.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\mcsd.Core.Library\mcsd.Core.Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\csv\" />
+    <Folder Include="wwwroot\Output\UploadedFiles\pdf\" />
+    <Folder Include="wwwroot\Output\zip\" />
+    <Folder Include="wwwroot\xlsx\" />
+    <Folder Include="wwwroot\_angular\" />
+    <Folder Include="wwwroot\_angular\_AngularMCSD\" />
+  </ItemGroup>
+
+</Project>

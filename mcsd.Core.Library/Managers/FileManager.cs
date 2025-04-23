@@ -55,7 +55,7 @@ namespace mcsd.Library.Managers
                 , _destionationDirectory
                 , _destionationFileName
                 );
-            string _destionationUrl           = string.Format("../Output/zip/{0}"
+            string _destionationUrl           = string.Format("/wwwroot/Output/zip/{0}"
                 , _destionationFileName
             );
 

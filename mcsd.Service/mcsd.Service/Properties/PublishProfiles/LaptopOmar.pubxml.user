@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\pablo.perez\dev\iis\mcsd</_PublishTargetUrl>
+    <History>True|2025-04-23T01:01:44.7157983Z;True|2025-04-08T01:25:55.2236620-05:00;True|2025-04-07T18:01:38.3127859-05:00;True|2025-04-07T17:21:22.4160034-05:00;True|2025-04-07T17:16:07.9651780-05:00;True|2024-02-08T23:36:18.8494215-05:00;True|2024-02-08T23:32:25.8690369-05:00;True|2024-02-08T22:34:12.7192444-05:00;True|2024-02-08T22:32:45.0210200-05:00;True|2024-02-08T21:46:50.0453063-05:00;True|2024-02-08T21:46:15.3569864-05:00;True|2024-02-08T21:36:56.8509865-05:00;True|2024-02-08T21:29:14.4115333-05:00;True|2024-02-08T21:08:02.0537279-05:00;True|2024-02-08T21:02:54.7962305-05:00;True|2024-02-08T20:43:49.1991820-05:00;True|2024-02-08T01:50:55.8158838-05:00;False|2024-02-08T01:49:39.7727936-05:00;False|2024-02-08T01:49:21.3106212-05:00;True|2024-02-08T01:48:11.6656864-05:00;True|2024-02-08T01:31:07.3358971-05:00;True|2024-02-08T01:18:06.7916225-05:00;True|2024-02-08T01:04:29.9752216-05:00;True|2024-02-08T00:26:01.2709178-05:00;True|2024-02-08T00:25:44.4714281-05:00;True|2024-02-08T00:23:26.4316750-05:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

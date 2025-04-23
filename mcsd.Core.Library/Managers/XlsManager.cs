@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using mcsd.Library.DataAccess.Entity;
-using mcsd.Library.DataAccess;
+using mcsd.Core.Library.DataAccess.Entity;
 
 namespace mcsd.Library.Managers
 {

@@ -26,7 +26,7 @@ namespace mcsd.Core.Library
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(/*"Data Source=mcsdexnacato.mssql.somee.com;Initial Catalog=mcsdexnacato;Persist Security Info=True;User ID=aperezNWO_SQLLogin_1;Password=nnsh89yjyc"*/ "workstation id=webapiangulardemo.mssql.somee.com;packet size=4096;user id=aperezNWO_SQLLogin_1;pwd=aperezNWO_SQLLogin_1;data source=webapiangulardemo.mssql.somee.com;persist security info=False;initial catalog=webapiangulardemo");
+                optionsBuilder.UseSqlServer("Data Source=mcsdexnacato.mssql.somee.com;Initial Catalog=mcsdexnacato;Persist Security Info=True;User ID=aperezNWO_SQLLogin_1;Password=nnsh89yjyc");
             }
         }
 

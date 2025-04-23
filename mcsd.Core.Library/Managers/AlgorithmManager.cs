@@ -1,8 +1,8 @@
-﻿using System;
+﻿using mcsd.Core.Library.DataAccess.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Web;
-using mcsd.Library.DataAccess;
 
 namespace mcsd.Library.Managers
 {
@@ -91,15 +91,9 @@ namespace mcsd.Library.Managers
             return randomValues;
         }
         //
-        public string BubbleSort()
+        public void BubbleSort()
         {
-            //-----------------------------------------------------
-            // DECLARACION DE VARIABLES
-            //-----------------------------------------------------
-            string sortedValues = string.Empty;
-            //-----------------------------------------------------
-            // ORDENAR ARREGLO
-            //-----------------------------------------------------
+            //
             int temp = 0;
             //
             for (int write = 0; write < arreglo.Length; write++)
@@ -111,9 +105,9 @@ namespace mcsd.Library.Managers
                     if (arreglo[sort] > arreglo[sort + 1])
                     {
                         //
-                        temp = arreglo[sort + 1];
+                        temp              = arreglo[sort + 1];
                         arreglo[sort + 1] = arreglo[sort];
-                        arreglo[sort] = temp;
+                        arreglo[sort]     = temp;
 
                         //-----------------------------------------------------
                         // GUARDAR PASO DEL ARREGLO EN MATRIZ DE PASOS
@@ -132,25 +126,7 @@ namespace mcsd.Library.Managers
                         sortSteps.Add(tempValues);
                     }
                 }
-                //
             }
-            //-----------------------------------------------------
-            // JUNTAR ARREGLO EN CADENA
-            //-----------------------------------------------------
-            for (int j = 0; j < arraySize; j++)
-            {
-                string separator = (j == 0) ? string.Empty : "|";
-
-                sortedValues += separator + arreglo[j];
-            }
-#if DEBUG 
-            //
-            LogModel.Log(string.Format("BUBBLE SORT. STEPS  : {0} ", sortSteps.Count));
-            //
-            LogModel.Log(string.Format("BUBBLE SORT. SORTED : {0} ", sortedValues.ToString()));
-#endif
-            //
-            return sortedValues;
         }
         //
         private int Partition(int[] arr, int left, int right)
@@ -173,9 +149,9 @@ namespace mcsd.Library.Managers
                 {
                     if (arr[left] == arr[right]) return right;
 
-                    int temp = arr[left];
-                    arr[left] = arr[right];
-                    arr[right] = temp;
+                    int temp      = arr[left];
+                    arr[left]     = arr[right];
+                    arr[right]    = temp;
 
                     //-----------------------------------------------------
                     // GUARDAR PASO DEL ARREGLO EN MATRIZ DE PASOS
@@ -220,30 +196,10 @@ namespace mcsd.Library.Managers
 
         }
         //
-        public string QuickSort()
+        public void QuickSort()
         {
             //
-            string sortedValues = string.Empty;
-            //
             Quick_Sort(arreglo, 0, arreglo.Length - 1);
-            //
-            //-----------------------------------------------------
-            // JUNTAR ARREGLO EN CADENA
-            //-----------------------------------------------------
-            for (int j = 0; j < arraySize; j++)
-            {
-                string separator = (j == 0) ? string.Empty : "|";
-
-                sortedValues += separator + arreglo[j];
-            }
-#if DEBUG
-            //
-            LogModel.Log(string.Format("QUICK SORT. STEPS  : {0} ", sortSteps.Count));
-            //
-            LogModel.Log(string.Format("QUICK SORT. SORTED : {0} ", sortedValues.ToString()));
-#endif
-            //
-            return sortedValues;
         }
         //
         public void BinaryTreeSort(int[] array)
@@ -328,7 +284,7 @@ namespace mcsd.Library.Managers
             int[] deck = new int[count];
             //
             for (byte i = 0; i < count; i++)
-                deck[i] = i;
+                deck[i] = (i + 1); // REMOVER EXTREAMOS DE COORDENADAS
             //
             for (byte i = 0; i <= count - 2; i++)
             {
@@ -413,15 +369,15 @@ namespace mcsd.Library.Managers
                 string separator = (index < (t.dist.Length - 1)) ? "," : string.Empty;
                 //
                 status.Append
-                    (
+                (
                         string.Format(@"{0}<{1}>-{2}-{3}{4}"
                                     , index.ToString(integerFormat)
                                     , vertex[index].Replace(",", ";").Replace("|", "")
                                     , t.dist[index].ToString(integerFormat)
                                     , t.path[index].Replace(",", ";")
                                     , separator
-)
-                    );
+                        )
+                );
             }
 
             //
@@ -453,21 +409,22 @@ namespace mcsd.Library.Managers
             //
             double coord_source_x = Convert.ToDouble(coord_source[0]);
             double coord_source_y = Convert.ToDouble(coord_source[1]);
-            double coord_dest_x = Convert.ToDouble(coord_dest[0]);
-            double coord_dest_y = Convert.ToDouble(coord_dest[1]);
-            double coord_x = Math.Abs(coord_dest_x - coord_source_x);
-            double coord_y = Math.Abs(coord_dest_y - coord_source_y);
+            double coord_dest_x   = Convert.ToDouble(coord_dest[0]);
+            double coord_dest_y   = Convert.ToDouble(coord_dest[1]);
+            double coord_x        = Math.Abs(coord_dest_x - coord_source_x);
+            double coord_y        = Math.Abs(coord_dest_y - coord_source_y);
             //
-            double hipotemuza = Pitagorean(coord_x, coord_y);
+            double hipotemuza = 0d;
             //
-            // LogModel.Log(string.Format("DIJSTRA_DEMO. GENERATE_RANDOM_MATRIX : ({0},{1}) ({2}, {3}) = {4} ", coord_source[0], coord_source[1], coord_dest[0], coord_dest[1], hipotemuza));
+            hipotemuza        = Pitagorean(coord_x, coord_y);
             //
-
             return hipotemuza;
         }
 
         public static string GenerateRandomPoints(int vertexSize, int sampleSize, int sourcePoint)
         {
+            //
+            sampleSize = sampleSize - 2; // REMOVER EXTREMOS DE COORDENADAS
             //
             int[,] graph         = new int[vertexSize, vertexSize];
             // 
@@ -547,7 +504,7 @@ namespace mcsd.Library.Managers
                     //--------------------------------------------------------------
                     // EN VALORES POSITIVOS LLENAR LA MATRIZ CON DISTANCIAS
                     //--------------------------------------------------------------
-
+                    // PADDING
                     if (randomValue == 1)
                     {
                         //
@@ -782,3 +739,4 @@ namespace mcsd.Library.Managers
 #endregion
     }
 }
+

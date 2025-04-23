@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using mcsd.Library.DataAccess;
+using mcsd.Core.Library.DataAccess.Models;
 
 namespace mcsd.Library.Managers
 {
@@ -37,7 +37,7 @@ namespace mcsd.Library.Managers
             this._textSearch     = p_textSearch;
             this._textContentRaw = p_textContentRaw;
         }
-        #endregion|
+        #endregion
 
         #region "Metodos"
         public string GetMaches()
