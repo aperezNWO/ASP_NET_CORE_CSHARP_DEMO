@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r6nSpML++I/19a923q5urfBrAfTQa0fkwa4ca04E1EztcVOqmCbiUt9m9OusDW1LYoj/89Zu6Gb+cdviOpC/OA==",
+  "dgSpecHash": "jbCcMtkOltp+lW+pXl+5SVXCkKkM1gtpjkcTHEbX+5qQUWhNLTgLSCeC7obGf2tKwEkEjFBZMxPyuVepjXibiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\_git\\git_hub_test\\mcsd.Core.Library\\mcsd.Core.Library.csproj",
+  "projectFilePath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Core.Library\\mcsd.Core.Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\epplus\\6.0.6\\epplus.6.0.6.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\epplus.interfaces\\6.0.0\\epplus.interfaces.6.0.0.nupkg.sha512",

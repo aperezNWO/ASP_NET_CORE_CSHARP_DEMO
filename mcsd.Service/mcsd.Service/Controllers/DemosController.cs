@@ -1558,6 +1558,79 @@ namespace mcsd.Web.Controllers
             //
             return "ok";
         }
+        //
+        //
+        [Microsoft.AspNetCore.Mvc.HttpGet("GenerarInformeXLS")]
+        public string GenerarInformeXLSZIP()
+        {
+            //
+            string status = "OK";
+
+            try
+            {
+
+                /////////////////////////////////////////////////////////////////////////
+                // GENERAR ARCHIVO XLS
+                /////////////////////////////////////////////////////////////////////////
+
+                string _extensionDocumento = @"xlsx";
+                //
+                string _nombreDocumento    = string.Format(@"{0}{1}.{2}"
+                 , System.Guid.NewGuid().ToString()
+                 , DateTime.Now.ToString(Globals.DateFormatShortTimestamp)
+                 , _extensionDocumento);
+                //
+                string resultRelativeFilePath = string.Format(@"\{0}\{1}", _extensionDocumento, _nombreDocumento);
+                string resultFilePath         = string.Format(@"{0}\{1}", _env.WebRootPath, resultRelativeFilePath);
+                //
+                List<AccessLogEntity> ListadoAccessLog = new List<AccessLogEntity>();
+                //
+                ListadoAccessLog                       = _logModel.GetAccessLog().GetRange(0, LOG_LIMIT);
+                //
+                XlsManager xlsManager = new XlsManager(resultFilePath, ListadoAccessLog);
+                status                = (xlsManager.GetXLS()) == true ? _nombreDocumento : @"[ERROR]";
+
+                /////////////////////////////////////////////////////////////////////////
+                // GENERAR ARCHIVO ZIP
+                /////////////////////////////////////////////////////////////////////////
+
+                //------------------------------------------------------------------------------------------------------
+                // DECLARACION DE VARIABLES
+                //------------------------------------------------------------------------------------------------------
+                string xlsFileName              = TempData["UploadedFileName"].ToString();
+                string xlsFilePath              = this._env.WebRootPath + @"\Output\UploadedFiles\" + Path.GetFileName(xlsFileName);
+                string extensionDocumentoZip    = "zip";
+                string xlsDestionationDirectory = this._env.WebRootPath + String.Format(@"/Output/{0}", extensionDocumentoZip);
+
+                //------------------------------------------------------------------------------------------------------
+                // INSTANCIACION DE CLASE 
+                //------------------------------------------------------------------------------------------------------
+                //
+                FileManager fileManager = new FileManager
+                    (
+                          xlsFilePath
+                        , xlsDestionationDirectory
+                        , extensionDocumentoZip
+                    );
+
+                /////////////////////////////////////////////////////////////////////////
+                // OBTENER NOMBRE DE ARCHIVO ZIP
+                /////////////////////////////////////////////////////////////////////////
+                
+                status = fileManager.SetZipFile();
+
+            }
+            catch (Exception ex)
+            {
+                //
+                status = String.Format("PAGE_LOG_DEMO | ERROR | {0}-{1}", ex.Message, ex.StackTrace);
+                //
+                LogModel.Log(status, GetIpValue(), LogModel.LogType.Error);
+                //
+                throw;
+            }
+            return status;
+        }
         #endregion
 
         #region "SUDOKU"

@@ -3,3 +3,18 @@
 ///////////////////////////////////////////////////////////////////////
 
 -- [_] somee.com
+
+		-- [_]  login : alejandro.perez.acosta@hotmail.com
+		        pwd   : p@bloP3rez.2023.01
+
+
+-- [_] GIT : 
+
+   git add *
+   git commit -m"Application ASP_NET_CORE_CSHARP_DEMO v[1.0.25]" -m"1) "GenerarInformeXLSZIP" -a 
+   git push
+   git pull
+   git push
+
+
+///////////////////////////////////////////////////////////////////////

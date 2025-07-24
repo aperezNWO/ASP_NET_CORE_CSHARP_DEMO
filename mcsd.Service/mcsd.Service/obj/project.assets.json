@@ -6943,13 +6943,13 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.24",
+    "version": "1.0.25",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\_git\\git_hub_test\\mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
+      "projectUniqueName": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
       "projectName": "mcsd.Service",
-      "projectPath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\_git\\git_hub_test\\mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
+      "projectPath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
       "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\_git\\git_hub_test\\mcsd.Service\\mcsd.Service\\obj\\",
+      "outputPath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Service\\mcsd.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6971,8 +6971,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\_git\\git_hub_test\\mcsd.Core.Library\\mcsd.Core.Library.csproj": {
-              "projectPath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\_git\\git_hub_test\\mcsd.Core.Library\\mcsd.Core.Library.csproj"
+            "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Core.Library\\mcsd.Core.Library.csproj": {
+              "projectPath": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Core.Library\\mcsd.Core.Library.csproj"
             }
           }
         }
