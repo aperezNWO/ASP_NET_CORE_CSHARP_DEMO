@@ -1560,7 +1560,7 @@ namespace mcsd.Web.Controllers
         }
         //
         //
-        [Microsoft.AspNetCore.Mvc.HttpGet("GenerarInformeXLS")]
+        [Microsoft.AspNetCore.Mvc.HttpGet("GenerarInformeXLSZIP")]
         public string GenerarInformeXLSZIP()
         {
             //

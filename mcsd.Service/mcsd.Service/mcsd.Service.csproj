@@ -12,7 +12,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>E:\pablo.perez\dev\NetCore\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\mcsd.Service.xml</DocumentationFile>
-    <Version>1.0.26</Version>
+    <Version>1.0.27</Version>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>

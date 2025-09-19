@@ -10,8 +10,10 @@
 
 -- [_] GIT : 
 
+   (EXECUTE FROM COMMAND LINE ONE VISUAL STIDIO IS CLOSED)
+
    git add *
-   git commit -m"Application ASP_NET_CORE_CSHARP_DEMO v[1.0.26]" -m"1) "GenerarInformeXLSZIP" -a 
+   git commit -m"Application ASP_NET_CORE_CSHARP_DEMO v[1.0.27]" -m"1) "GetAllContactForms" -a 
    git push
    git pull
    git push

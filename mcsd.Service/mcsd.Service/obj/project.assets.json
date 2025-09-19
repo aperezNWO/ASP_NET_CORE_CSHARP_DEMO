@@ -6943,7 +6943,7 @@
     "e:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "1.0.26",
+    "version": "1.0.27",
     "restore": {
       "projectUniqueName": "E:\\pablo.perez\\dev\\NetCore\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
       "projectName": "mcsd.Service",
