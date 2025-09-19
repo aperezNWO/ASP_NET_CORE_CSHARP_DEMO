@@ -8,6 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = mcsd.Service
-build_property.ProjectDir = C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\_git\git_hub_test\mcsd.Service\mcsd.Service\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = E:\pablo.perez\dev\NetCore\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\

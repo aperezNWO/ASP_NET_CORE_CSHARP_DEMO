@@ -1631,6 +1631,35 @@ namespace mcsd.Web.Controllers
             }
             return status;
         }
+
+        //
+        [Microsoft.AspNetCore.Mvc.HttpGet("GetAllContactForms")]
+        public Microsoft.AspNetCore.Mvc.JsonResult GetAllContactForms()
+        {
+            //
+            string status = "OK";
+            List<ContactFormEntity> listadoContactForm = null;
+            //
+            try
+            {
+                //
+                listadoContactForm = new ContactFormModel(this._connString).GetAllContactForm();
+            }
+            catch (Exception ex)
+            {
+                //
+                status = String.Format("PAGE_XLS_DEMO | ERROR | {0}-{1}", ex.Message, ex.StackTrace);
+                //
+                LogModel.Log(status, GetIpValue(), LogModel.LogType.Error);
+                //
+                throw;
+            }
+
+            //
+            var json = Json(listadoContactForm);
+            //
+            return json;
+        }
         #endregion
 
         #region "SUDOKU"
