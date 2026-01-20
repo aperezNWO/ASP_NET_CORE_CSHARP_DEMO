@@ -17,9 +17,6 @@ using Microsoft.Extensions.Caching.Memory;
 namespace mcsd.Web.Controllers
 {
 
-    [ApiController]
-    [Route("/[controller]/")]
-
     public class BaseApiController : Controller
     {
         #region "Campos"
