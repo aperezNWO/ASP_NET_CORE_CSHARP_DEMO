@@ -60,39 +60,6 @@ namespace mcsd.Web.Controllers
         #endregion
 
         #region "Metodos"
-
-        /// <summary>
-        /// INGRESAR UN REGISTRO AL LOG
-        /// </summary>
-        /// <param name="p_logMsg"></param>
-        /// <param name="logType"></param>        
-        /// <returns></returns>
-        [Microsoft.AspNetCore.Mvc.HttpGet("SetLog")]
-        public string _SetLog(string p_logMsg, LogModel.LogType logType = LogModel.LogType.Info)
-        {
-            //
-            string status = string.Empty;
-            //
-            try
-            {
-                //---------------------------------------------------
-                // LOG
-                //---------------------------------------------------
-                LogModel.Log(p_logMsg, this.GetIpValue(), logType);
-                //
-                status = @"OK";
-
-            }
-            catch (Exception ex)
-            {
-                //
-                status = string.Format(@"Metodo _SetLog() - Error  : {0} ",ex.Message + " " + ex.StackTrace); ;
-                //
-                throw;
-            }
-            //
-            return status;
-        }
        
         [Microsoft.AspNetCore.Mvc.HttpGet("GetAppVersion")]
         public string GetAppVersion()
@@ -123,6 +90,38 @@ namespace mcsd.Web.Controllers
             return appVersion;
         }
 
+        /// <summary>
+        /// INGRESAR UN REGISTRO AL LOG
+        /// </summary>
+        /// <param name="p_logMsg"></param>
+        /// <param name="logType"></param>        
+        /// <returns></returns>
+        [Microsoft.AspNetCore.Mvc.HttpGet("SetLog")]
+        public string SetLog(string p_logMsg, LogModel.LogType logType = LogModel.LogType.Info)
+        {
+            //
+            string status = string.Empty;
+            //
+            try
+            {
+                //---------------------------------------------------
+                // LOG
+                //---------------------------------------------------
+                LogModel.Log(p_logMsg, this.GetIpValue(), logType);
+                //
+                status = @"OK";
+
+            }
+            catch (Exception ex)
+            {
+                //
+                status = string.Format(@"Metodo _SetLog() - Error  : {0} ", ex.Message + " " + ex.StackTrace); ;
+                //
+                throw;
+            }
+            //
+            return status;
+        }
         #endregion
     }
 }

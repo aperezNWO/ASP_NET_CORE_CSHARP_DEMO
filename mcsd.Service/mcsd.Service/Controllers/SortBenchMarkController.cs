@@ -20,7 +20,7 @@ namespace mcsd.Service.Controllers
     [ApiController]
     [Route("api/[controller]/")]
 
-    public class AlgorithmController : BaseApiController
+    public class SortBenchMarkController : BaseApiController
     {
         #region "Constantes"
         private const int LOG_LIMIT         = 100;
@@ -33,7 +33,7 @@ namespace mcsd.Service.Controllers
         #endregion
 
         #region "Constructor"
-        public AlgorithmController(IConfiguration configuration
+        public SortBenchMarkController(IConfiguration configuration
                                 , IWebHostEnvironment env
                                 , IHttpContextAccessor p_httpContextAccessor
                                 , IMemoryCache memoryCache)
@@ -44,11 +44,6 @@ namespace mcsd.Service.Controllers
             )
         {
             //
-            //this._SetSTATPieCache();
-            //
-            //this._SetSTATBarCache();
-            //
-            //this._SetXmlDataToCache();
         }
         #endregion
 
@@ -173,55 +168,6 @@ namespace mcsd.Service.Controllers
             return status;
         }
         //
-        #endregion
-
-        #region "SUDOKU"
-
-        //
-        [Microsoft.AspNetCore.Mvc.HttpPost("Sudoku_Upload_File")]
-        public JsonResult Sudoku_Upload_File()
-        {
-            //
-            string wwwPath          = this._env.WebRootPath;
-            string contentPath      = this._env.ContentRootPath;
-            string uploadedFileName = string.Format(@"[]");
-            //
-            string path             = wwwPath + @"\Output\UploadedFiles\";
-            //
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            //
-            int uploadedFileNameCount = HttpContext.Request.Form.Files.Count;
-            //
-            if (uploadedFileNameCount > 0)
-            {
-                //
-                List<string> uploadedFiles = new List<string>();
-                //
-                foreach (IFormFile postedFile in HttpContext.Request.Form.Files)
-                {
-                    //
-                    string fileName          = Path.GetFileName(postedFile.FileName);
-                    //
-                    using (FileStream stream = new FileStream(path + fileName, FileMode.Create))
-                    {
-                        postedFile.CopyTo(stream);
-                        uploadedFiles.Add(fileName);
-                        TempData["UploadedFileName"] = fileName;
-                    }
-                }
-                //
-                uploadedFileName = TempData["UploadedFileName"].ToString();
-            }
-            //
-            string uploadedFilePath = this._env.WebRootPath + @"\Output\UploadedFiles\" + Path.GetFileName(uploadedFileName);
-            //
-            string fileContent = System.IO.File.ReadAllText(uploadedFilePath);
-            //
-            return Json(fileContent);
-        }
         #endregion
 
     }

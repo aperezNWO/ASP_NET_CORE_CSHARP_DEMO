@@ -80,11 +80,11 @@ namespace mcsd.Service
 
             app.UseRouting();
 
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseSession();
 
             app.UseAuthorization();
-
-            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {

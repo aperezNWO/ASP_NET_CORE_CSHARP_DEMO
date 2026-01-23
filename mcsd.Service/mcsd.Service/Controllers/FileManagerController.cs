@@ -20,7 +20,7 @@ namespace mcsd.Service.Controllers
     [ApiController]
     [Route("api/[controller]/")]
 
-    public class FileManagerController  : BaseApiController
+    public class FileManagerController : BaseApiController
     {
         #region "Constantes"
         private const int LOG_LIMIT = 100;
@@ -595,232 +595,8 @@ namespace mcsd.Service.Controllers
         }
         #endregion
 
-        #region "ZIP ASYNC DEMO"
-        //
-        [Microsoft.AspNetCore.Mvc.HttpGet("_ZipDemo")]
-        public Microsoft.AspNetCore.Mvc.ActionResult _ZipDemo()
-        {
-            //
-            try
-            {
-                //---------------------------------------------------
-                // LOG
-                //---------------------------------------------------
-                LogModel.Log("PAGE_ZIP_DEMO", this.GetIpValue(), LogModel.LogType.Info);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            return View();
+        #region "XLS DEMO"
 
-        }
-        //
-        [Microsoft.AspNetCore.Mvc.HttpPost("_ZipDemo")]
-        public IActionResult _ZipDemo(List<IFormFile> postedFiles)
-        {
-            //
-            string wwwPath = this._env.WebRootPath;
-            string contentPath = this._env.ContentRootPath;
-            //
-            string path = wwwPath + @"\Output\UploadedFiles\";
-            //
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            //
-            List<string> uploadedFiles = new List<string>();
-            foreach (IFormFile postedFile in postedFiles)
-            {
-                string fileName = Path.GetFileName(postedFile.FileName);
-                using (FileStream stream = new FileStream(path + fileName, FileMode.Create))
-                {
-                    postedFile.CopyTo(stream);
-                    uploadedFiles.Add(fileName);
-                    TempData["UploadedFileName"] = fileName;
-                    ViewBag.Message += string.Format("<b>{0}</b>", fileName);
-                }
-            }
-            return View();
-        }
-        //
-        [Microsoft.AspNetCore.Mvc.HttpPost("_ZipDemoGetFileName")]
-        public JsonResult _ZipDemoGetFileName()
-        {
-            //
-            string wwwPath = this._env.WebRootPath;
-            string contentPath = this._env.ContentRootPath;
-            string uploadedFileName = string.Format(@"[]");
-            //
-            string path = wwwPath + @"\Output\UploadedFiles\";
-            //
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            //
-            int uploadedFileNameCount = HttpContext.Request.Form.Files.Count;
-            //
-            if (uploadedFileNameCount > 0)
-            {
-                //
-                List<string> uploadedFiles = new List<string>();
-                //
-                foreach (IFormFile postedFile in HttpContext.Request.Form.Files)
-                {
-                    //
-                    string fileName = Path.GetFileName(postedFile.FileName);
-                    //
-                    using (FileStream stream = new FileStream(path + fileName, FileMode.Create))
-                    {
-                        postedFile.CopyTo(stream);
-                        uploadedFiles.Add(fileName);
-                        TempData["UploadedFileName"] = fileName;
-                    }
-                }
-                //
-                uploadedFileName = TempData["UploadedFileName"].ToString();
-            }
-            //
-            return Json(uploadedFileName);
-        }
-        //
-        [Microsoft.AspNetCore.Mvc.HttpPost("SetZip")]
-        public string SetZip()
-        {
-            //
-            string status = "ok";
-            //
-            try
-            {
-                //------------------------------------------------------------------------------------------------------
-                // OBTENER ARCHIVO
-                //------------------------------------------------------------------------------------------------------
-
-                //------------------------------------------------------------------------------------------------------
-                // DECLARACION DE VARIABLES
-                //------------------------------------------------------------------------------------------------------
-                string fileName = TempData["UploadedFileName"].ToString();
-                string uploadedFilePath = this._env.WebRootPath + @"\Output\UploadedFiles\" + Path.GetFileName(fileName);
-                string extensionDocumento = "zip";
-                string destionationDirectory = this._env.WebRootPath + String.Format(@"/Output/{0}", extensionDocumento);
-
-                //------------------------------------------------------------------------------------------------------
-                // INSTANCIACION DE CLASE 
-                //------------------------------------------------------------------------------------------------------
-                //
-                FileManager fileManager = new FileManager
-                    (
-                          uploadedFilePath
-                        , destionationDirectory
-                        , extensionDocumento
-                    );
-
-                status = fileManager.SetZipFile();
-
-                //------------------------------------------------------------------------------------------------------
-                // LOG
-                //------------------------------------------------------------------------------------------------------
-#if DEBUG
-                LogModel.Log("ZIP_ASYNC");
-
-                LogModel.Log(string.Format("FILE_TO_ZIP : {0}", uploadedFilePath));
-
-                LogModel.Log(string.Format("ZIPPED_FILE : {0}", status));
-#endif
-            }
-            catch (Exception e)
-            {
-                //
-                string errorMsg = string.Format("ZIP_ERROR : {0}", e.Message + " " + e.StackTrace);
-                //
-                LogModel.Log(errorMsg, string.Empty, LogModel.LogType.Error);
-                //
-                status = errorMsg;
-            }
-            //
-            return status;
-        }
-        //
-        [Microsoft.AspNetCore.Mvc.HttpGet("_SetZip")]
-        public JsonResult _SetZip(string p_fileName)
-        {
-            //
-            string status = "ok";
-            //
-            try
-            {
-                //------------------------------------------------------------------------------------------------------
-                // OBTENER ARCHIVO
-                //------------------------------------------------------------------------------------------------------
-
-                //------------------------------------------------------------------------------------------------------
-                // DECLARACION DE VARIABLES
-                //------------------------------------------------------------------------------------------------------
-                string uploadedFilePath = this._env.WebRootPath + @"\Output\UploadedFiles\" + p_fileName;
-                string extensionDocumento = "zip";
-                string destionationDirectory = this._env.WebRootPath + String.Format(@"/Output/{0}", extensionDocumento);
-
-                //------------------------------------------------------------------------------------------------------
-                // INSTANCIACION DE CLASE 
-                //------------------------------------------------------------------------------------------------------
-                //
-                FileManager fileManager = new FileManager
-                    (
-                          uploadedFilePath
-                        , destionationDirectory
-                        , extensionDocumento
-                    );
-
-                status = fileManager.SetZipFile();
-
-                //------------------------------------------------------------------------------------------------------
-                // LOG
-                //------------------------------------------------------------------------------------------------------
-#if DEBUG
-                LogModel.Log("ZIP_ASYNC");
-
-                LogModel.Log(string.Format("FILE_TO_ZIP : {0}", uploadedFilePath));
-
-                LogModel.Log(string.Format("ZIPPED_FILE : {0}", status));
-#endif
-            }
-            catch (Exception e)
-            {
-                //
-                string errorMsg = string.Format("ZIP_ERROR : {0}", e.Message + " " + e.StackTrace);
-                //
-                LogModel.Log(errorMsg, string.Empty, LogModel.LogType.Error);
-                //
-                status = errorMsg;
-            }
-            //
-            return Json(status);
-        }
-        #endregion
-
-        #region "Log / XLS DEMO"
-        [Microsoft.AspNetCore.Mvc.HttpGet("_LogDemo")]
-        public Microsoft.AspNetCore.Mvc.ActionResult _LogDemo()
-        {
-            //
-            List<AccessLogEntity> ListadoAccessLog = new List<AccessLogEntity>();
-            //
-            try
-            {
-                //
-                LogModel.Log("PAGE_ACCESS_LOG_DEMO", this.GetIpValue());
-                //
-                ListadoAccessLog = _logModel.GetAccessLog().GetRange(0, LOG_LIMIT);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            //
-            return View(ListadoAccessLog);
-        }
         //
         [Microsoft.AspNetCore.Mvc.HttpGet("GenerarInformeXLS")]
         public string GenerarInformeXLS()
@@ -859,6 +635,7 @@ namespace mcsd.Service.Controllers
             }
             return status;
         }
+        //
         [Microsoft.AspNetCore.Mvc.HttpGet("GenerarInformeJson")]
         public Microsoft.AspNetCore.Mvc.JsonResult GenerarInformeJson()
         {
@@ -1008,6 +785,56 @@ namespace mcsd.Service.Controllers
                 throw;
             }
             return status;
+        }
+
+        #endregion
+
+        #region "FILE MANAGER"
+
+        //
+        [Microsoft.AspNetCore.Mvc.HttpPost("Sudoku_Upload_File")]
+        public JsonResult Sudoku_Upload_File()
+        {
+            //
+            string wwwPath = this._env.WebRootPath;
+            string contentPath = this._env.ContentRootPath;
+            string uploadedFileName = string.Format(@"[]");
+            //
+            string path = wwwPath + @"\Output\UploadedFiles\";
+            //
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            //
+            int uploadedFileNameCount = HttpContext.Request.Form.Files.Count;
+            //
+            if (uploadedFileNameCount > 0)
+            {
+                //
+                List<string> uploadedFiles = new List<string>();
+                //
+                foreach (IFormFile postedFile in HttpContext.Request.Form.Files)
+                {
+                    //
+                    string fileName = Path.GetFileName(postedFile.FileName);
+                    //
+                    using (FileStream stream = new FileStream(path + fileName, FileMode.Create))
+                    {
+                        postedFile.CopyTo(stream);
+                        uploadedFiles.Add(fileName);
+                        TempData["UploadedFileName"] = fileName;
+                    }
+                }
+                //
+                uploadedFileName = TempData["UploadedFileName"].ToString();
+            }
+            //
+            string uploadedFilePath = this._env.WebRootPath + @"\Output\UploadedFiles\" + Path.GetFileName(uploadedFileName);
+            //
+            string fileContent = System.IO.File.ReadAllText(uploadedFilePath);
+            //
+            return Json(fileContent);
         }
 
         //

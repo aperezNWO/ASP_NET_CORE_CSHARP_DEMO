@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("mcsd.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.30.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.30+06fc8f3c22747cc4f2da05c1a427fc28108f572c")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.31.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.31+22c3f3fa7b26337f13f0094084e0601b32726b52")]
 [assembly: System.Reflection.AssemblyProductAttribute("mcsd.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mcsd.Service")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.30.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.31.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 
