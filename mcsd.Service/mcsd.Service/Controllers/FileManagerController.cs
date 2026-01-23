@@ -910,26 +910,13 @@ namespace mcsd.Service.Controllers
             return Json(ListadoAccessLog);
         }
         //
-        [Microsoft.AspNetCore.Mvc.HttpPost("GetConsultaLogStatPost")]
-        public Microsoft.AspNetCore.Mvc.JsonResult GetConsultaLogStatPost()
+        [Microsoft.AspNetCore.Mvc.HttpGet("GetConsultaLogStatGet")]
+        public Microsoft.AspNetCore.Mvc.JsonResult GetConsultaLogStatGet()
         {
             //
             List<AccessLogEntity> list = _logModel.GetAccessLogSTAT();
             //
             var json = Json(list);
-            //
-            return json;
-        }
-        //
-        [Microsoft.AspNetCore.Mvc.HttpGet("GetConsultaLogStatGet")]
-        public Microsoft.AspNetCore.Mvc.JsonResult GetConsultaLogStatGet()
-        {
-            //
-            //List<AccessLogEntity> list = _logModel.GetAccessLogSTAT();
-            //
-            JsonResult json = (JsonResult)base._memoryCache.Get("InformeXLSJson");
-            //
-            LogModel.Log(String.Format("LOG_DEMO | Get json from Cache : {0}", json));
             //
             return json;
         }

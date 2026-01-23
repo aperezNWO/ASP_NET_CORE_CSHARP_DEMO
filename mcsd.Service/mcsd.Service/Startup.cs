@@ -54,9 +54,9 @@ namespace mcsd.Service
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
-                    builder => builder.WithOrigins("http://localhost:4200")
+                    builder => builder.WithOrigins("http://localhost:4200", "https://apereznwo.github.io")
                                       .AllowAnyMethod()
-                                      .AllowAnyHeader());
+                                      .WithHeaders("Content-Type", "Authorization"));
             });
 
             services.AddHttpContextAccessor();
@@ -89,7 +89,6 @@ namespace mcsd.Service
             app.UseRouting();
 
             app.UseSession();
-
             app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
