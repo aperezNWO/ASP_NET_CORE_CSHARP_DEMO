@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{46BE7EEB-E724-4191-B3D1-5EEFB5675A46}|mcsd.Service\\mcsd.Service\\mcsd.Service.csproj|c:\\users\\pablo.perez\\dev\\_dotnet\\asp_net_core_csharp_demo\\asp_net_core_csharp_demo\\mcsd.service\\mcsd.service\\docs\\scm.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{46BE7EEB-E724-4191-B3D1-5EEFB5675A46}|mcsd.Service\\mcsd.Service\\mcsd.Service.csproj|solutionrelative:mcsd.service\\mcsd.service\\docs\\scm.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46BE7EEB-E724-4191-B3D1-5EEFB5675A46}|mcsd.Service\\mcsd.Service\\mcsd.Service.csproj|c:\\users\\pablo.perez\\dev\\_dotnet\\asp_net_core_csharp_demo\\asp_net_core_csharp_demo\\mcsd.service\\mcsd.service\\mcsd.service.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{46BE7EEB-E724-4191-B3D1-5EEFB5675A46}|mcsd.Service\\mcsd.Service\\mcsd.Service.csproj|solutionrelative:mcsd.service\\mcsd.service\\mcsd.service.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 31,
+          "SelectedChildIndex": 32,
           "Children": [
             {
               "$type": "Bookmark",
@@ -142,6 +146,18 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mcsd.Service",
+              "DocumentMoniker": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
+              "RelativeDocumentMoniker": "mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
+              "ToolTip": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
+              "RelativeToolTip": "mcsd.Service\\mcsd.Service\\mcsd.Service.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-23T21:10:10.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "scm.txt",
               "DocumentMoniker": "C:\\Users\\pablo.perez\\dev\\_DotNet\\ASP_NET_CORE_CSHARP_DEMO\\ASP_NET_CORE_CSHARP_DEMO\\mcsd.Service\\mcsd.Service\\Docs\\scm.txt",
@@ -150,7 +166,7 @@
               "RelativeToolTip": "mcsd.Service\\mcsd.Service\\Docs\\scm.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAACXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-01-23T20:39:47.722Z",
+              "WhenOpened": "2026-01-23T21:10:03.053Z",
               "EditorCaption": ""
             }
           ]
