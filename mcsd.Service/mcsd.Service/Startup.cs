@@ -27,6 +27,7 @@ namespace mcsd.Service
 
         public IConfiguration Configuration { get; }
 
+        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
@@ -43,7 +44,6 @@ namespace mcsd.Service
 
             services.AddDistributedMemoryCache();
 
-            services.AddControllersWithViews();
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -51,17 +51,21 @@ namespace mcsd.Service
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "mcsdService", Version = "v1" });
             });
 
+            services.AddControllersWithViews();
+
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
-                    builder => builder.WithOrigins("http://localhost:4200", "https://apereznwo.github.io")
+                    builder => builder.AllowAnyOrigin()
                                       .AllowAnyMethod()
-                                      .WithHeaders("Content-Type", "Authorization"));
+                                      .AllowAnyHeader());
+
             });
 
             services.AddHttpContextAccessor();
         }
 
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -72,31 +76,21 @@ namespace mcsd.Service
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "mcsdService v1"));
 
-            // Handle preflight requests
-            app.Use(async (context, next) =>
-            {
-                if (context.Request.Method == "OPTIONS")
-                {
-                    context.Response.StatusCode = StatusCodes.Status200OK;
-                    await context.Response.CompleteAsync();
-                }
-                else
-                {
-                    await next();
-                }
-            });
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseSession();
-            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

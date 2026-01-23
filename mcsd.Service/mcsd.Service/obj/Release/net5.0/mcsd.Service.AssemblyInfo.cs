@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mcsd.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.30.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.30+22f2d83ff3b07f177aeb1229173aa0375426e7fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.30+06fc8f3c22747cc4f2da05c1a427fc28108f572c")]
 [assembly: System.Reflection.AssemblyProductAttribute("mcsd.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mcsd.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.30.0")]

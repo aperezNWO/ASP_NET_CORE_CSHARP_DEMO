@@ -914,9 +914,9 @@ namespace mcsd.Service.Controllers
         public Microsoft.AspNetCore.Mvc.JsonResult GetConsultaLogStatGet()
         {
             //
-            List<AccessLogEntity> list = _logModel.GetAccessLogSTAT();
+            JsonResult json = (JsonResult)base._memoryCache.Get("InformeXLSJson");
             //
-            var json = Json(list);
+            LogModel.Log(String.Format("LOG_DEMO | Get json from Cache : {0}", json));
             //
             return json;
         }
