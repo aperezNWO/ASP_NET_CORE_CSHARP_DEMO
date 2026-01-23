@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mcsd.Core.Library")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8d87645d22cd6fd864ef29a8cf43960276cb471")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce222092b355c3a9b50507bc1a6188036d293c47")]
 [assembly: System.Reflection.AssemblyProductAttribute("mcsd.Core.Library")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mcsd.Core.Library")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
