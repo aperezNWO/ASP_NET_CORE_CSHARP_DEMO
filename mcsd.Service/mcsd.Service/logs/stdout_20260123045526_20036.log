@@ -1,0 +1,32 @@
+crit: Microsoft.AspNetCore.Hosting.Diagnostics[6]
+      Application startup exception
+      Could not load type 'mcsd.Service.Interface.INative' from assembly 'mcsd.Service, Version=1.0.29.0, Culture=neutral, PublicKeyToken=null' because the method 'get_DLL_NAME' has no implementation (no RVA).
+      System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+      Could not load type 'mcsd.Service.Interface.INative' from assembly 'mcsd.Service, Version=1.0.29.0, Culture=neutral, PublicKeyToken=null' because the method 'get_DLL_NAME' has no implementation (no RVA).
+         at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+         at System.Reflection.RuntimeAssembly.get_DefinedTypes()
+         at Microsoft.AspNetCore.Mvc.ApplicationParts.AssemblyPart.get_Types()
+         at Microsoft.AspNetCore.Mvc.Controllers.ControllerFeatureProvider.PopulateFeature(IEnumerable`1 parts, ControllerFeature feature)
+         at Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartManager.PopulateFeature[TFeature](TFeature feature)
+         at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetControllerTypes()
+         at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.GetDescriptors()
+         at Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerActionDescriptorProvider.OnProvidersExecuting(ActionDescriptorProviderContext context)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.UpdateCollection()
+         at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.Initialize()
+         at Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider.GetChangeToken()
+         at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.<>c__DisplayClass11_0.<Subscribe>b__0()
+         at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+         at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Subscribe()
+         at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource..ctor(ControllerActionEndpointDataSourceIdProvider dataSourceIdProvider, IActionDescriptorCollectionProvider actions, ActionEndpointFactory endpointFactory, OrderedEndpointsSequenceProvider orderSequence)
+         at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.GetOrCreateDataSource(IEndpointRouteBuilder endpoints)
+         at Microsoft.AspNetCore.Builder.ControllerEndpointRouteBuilderExtensions.MapControllers(IEndpointRouteBuilder endpoints)
+         at mcsd.Service.Startup.<>c.<Configure>b__6_1(IEndpointRouteBuilder endpoints) in C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\Startup.cs:line 91
+         at Microsoft.AspNetCore.Builder.EndpointRoutingApplicationBuilderExtensions.UseEndpoints(IApplicationBuilder builder, Action`1 configure)
+         at mcsd.Service.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\Startup.cs:line 89
+         at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+         at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+         at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+         at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+         at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+         at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+         at Micro

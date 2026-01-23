@@ -60,14 +60,14 @@ namespace mcsd.Web.Controllers
         #endregion
 
         #region "Metodos"
+
         /// <summary>
         /// INGRESAR UN REGISTRO AL LOG
         /// </summary>
         /// <param name="p_logMsg"></param>
         /// <param name="logType"></param>        
         /// <returns></returns>
-        #region "Raiz"
-        [Microsoft.AspNetCore.Mvc.HttpGet("_SetLog")]
+        [Microsoft.AspNetCore.Mvc.HttpGet("SetLog")]
         public string _SetLog(string p_logMsg, LogModel.LogType logType = LogModel.LogType.Info)
         {
             //
@@ -93,28 +93,9 @@ namespace mcsd.Web.Controllers
             //
             return status;
         }
-        [Microsoft.AspNetCore.Mvc.HttpGet("_DemosIndex")]
-        public Microsoft.AspNetCore.Mvc.ActionResult _DemosIndex(int id = 0)
-        {
-            //
-            try
-            {
-                //---------------------------------------------------
-                // LOG
-                //---------------------------------------------------
-                LogModel.Log("PAGE_DEMO_INDEX", this.GetIpValue());
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            //
-            return View();
-        }
-        //
-        [Microsoft.AspNetCore.Mvc.HttpGet("_GetAppVersion")]
-        public string _GetAppVersion()
+       
+        [Microsoft.AspNetCore.Mvc.HttpGet("GetAppVersion")]
+        public string GetAppVersion()
         {
             //--------------------------------------------------
             // DECLARACION DE VARIABLES
@@ -141,7 +122,6 @@ namespace mcsd.Web.Controllers
             //
             return appVersion;
         }
-        #endregion
 
         #endregion
     }

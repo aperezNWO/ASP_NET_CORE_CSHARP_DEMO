@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using mcsd.Web.Controllers;
 using Microsoft.AspNetCore.Http.Features;
-using mcsd.Core.Library.DataAccess.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
+using mcsd.Web.Controllers;
+using mcsd.Core.Library.DataAccess.Models;
 
 namespace mcsd.Web.Controllers
 {
@@ -38,6 +38,7 @@ namespace mcsd.Web.Controllers
             //
             return remoteIpAddress.ToString();
         }
+
         [NonAction]
         public string ApplicationVersion()
         {

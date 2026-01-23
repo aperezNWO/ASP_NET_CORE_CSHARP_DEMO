@@ -1,19 +1,19 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System;
+using System.Data;
+using System.Globalization;
+using System.IO;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
-using mcsd.Library;
+using mcsd.Web.Controllers;
 using mcsd.Library.Managers;
 using mcsd.Core.Library.DataAccess.Entity;
 using mcsd.Core.Library.DataAccess.Models;
-using System.Collections.Generic;
-using System.Data;
-using System.Globalization;
-using System.IO;
-using System.Threading.Tasks;
-using System;
-using mcsd.Web.Controllers;
+using mcsd.Library;
 
 namespace mcsd.Service.Controllers
 {
