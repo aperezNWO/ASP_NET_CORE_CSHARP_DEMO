@@ -15,8 +15,8 @@
     <Version>1.0.31</Version>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <AssemblyVersion>1.0.32.0</AssemblyVersion>
-    <FileVersion>1.0.32.0</FileVersion>
+    <AssemblyVersion>1.0.33.0</AssemblyVersion>
+    <FileVersion>1.0.33.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

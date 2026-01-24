@@ -1,3 +1,11 @@
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.csproj.AssemblyReference.cache
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.AssemblyInfoInputs.cache
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.AssemblyInfo.cs
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.csproj.CoreCompileInputs.cache
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.sourcelink.json
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\bin\Debug\net5.0\web.config
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\bin\Debug\net5.0\appsettings.json
@@ -56,14 +64,6 @@ C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DE
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\bin\Debug\net5.0\itextsharp.dll
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\bin\Debug\net5.0\itextsharp.xmlworker.dll
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\bin\Debug\net5.0\mcsd.Core.Library.pdb
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.csproj.AssemblyReference.cache
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.AssemblyInfoInputs.cache
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.AssemblyInfo.cs
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.csproj.CoreCompileInputs.cache
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.sourcelink.json
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\mcsd.Service.RazorTargetAssemblyInfo.cache
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\scopedcss\bundle\mcsd.Service.styles.css
 C:\Users\pablo.perez\dev\_DotNet\ASP_NET_CORE_CSHARP_DEMO\ASP_NET_CORE_CSHARP_DEMO\mcsd.Service\mcsd.Service\obj\Debug\net5.0\staticwebassets\mcsd.Service.StaticWebAssets.Manifest.cache
