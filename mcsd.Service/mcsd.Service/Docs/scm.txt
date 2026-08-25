@@ -12,7 +12,16 @@
 
    (EXECUTE FROM COMMAND LINE ONE VISUAL STIDIO IS CLOSED)
 
-   git add * &&  git commit -m"Application ASP_NET_CORE_CSHARP_DEMO v[1.0.33]" -m"1) Controllers Overhauling" -a &&  git push &&  git pull &&  git push
+   git add * &&  git commit -m"Application ASP_NET_CORE_CSHARP_DEMO v[1.0.34]" -m"1) dell vostro working folder update" -a &&  git push &&  git pull &&  git push
 
+
+-- [_] FTP
+
+
+Addresses:	
+	ftp://ASP-NET-CORE-CSHARP-DEMO.somee.com/www.ASP-NET-CORE-CSHARP-DEMO.somee.com
+	ftp://155.254.244.28/www.ASP-NET-CORE-CSHARP-DEMO.somee.com
+Username:	aperezNWO
+PWD     :   p@bloP3rez.2023.01
 
 ///////////////////////////////////////////////////////////////////////
