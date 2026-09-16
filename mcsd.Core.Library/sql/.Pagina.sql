@@ -1,29 +1,31 @@
+//
 delete from [dbo].[accessLogs] where IPVALUE = '::1' or IPValue is null or IPValue = '';
 89541
 
-/*
+//
 ALTER DATABASE webapiangulardemo 
 MODIFY FILE (NAME = N'webapiangulardemo_Logs', MAXSIZE = UNLIMITED, FILEGROWTH = 256MB);
 
+//
 ALTER DATABASE webapiangulardemo 
 MODIFY FILE (NAME = N'webapiangulardemo_Logs', FILEGROWTH = 512MB);
-*/
-/*
+
+//
 USE webapiangulardemo;
 SELECT name, physical_name, type_desc 
 FROM sys.database_files 
 WHERE type_desc = 'LOG';
 
-webapiangulardemo_Logs
-*/
-/*
+//webapiangulardemo_Logs
+
+//
 ALTER DATABASE webapiangulardemo 
 MODIFY FILE (NAME = logical_log_name, FILEGROWTH = 512MB);
 */
 
 
-/*
- SELECT 
+//
+SELECT 
                        AL.[ID_column]
                       ,AL.[PageName]
                       ,AL.[AccessDate]
@@ -46,4 +48,4 @@ MODIFY FILE (NAME = logical_log_name, FILEGROWTH = 512MB);
                     AND
                         AL.IPVALUE <> '::1'
                  order by 
-                       AL.[ID_column] asc*/
+                       AL.[ID_column] asc
